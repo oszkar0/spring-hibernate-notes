@@ -1,0 +1,38 @@
+Spring Boot Overview
+framework for building java applications
+Spring Boot perfomrs auto-configuration on props files and JAR classpath
+Help to resolve dependecy conflicts
+Provides embedded HTTP server
+
+Spring Boot and Spring relation
+Spring Boot uses Spring behiond the scenes, makes it easier to use Spring
+
+
+Spring Initilizer http://start.spring.io
+Qucikly create a starter Spring Boot Project
+Select your dependencies
+Creates a Maven/Gradle project
+Import project into my IDE
+
+No neeed to install server separetly
+
+Running Spring Boot Apps
+Spring Boot apps can be run standalone
+Run from IDE or command-line
+
+
+Deploying Spring Boot Apps
+Spring Boot apps can also be deplotes in traditional way (Deploy WAR file to external server) 
+
+
+Maven 
+downloads jar files, don't need to do it manually
+
+
+Develeopment od Spring file in spring initializr
+1. Configure our project at Spring Initializr website 
+-choose project, language, spring boot version, project metadata and dependencies
+2. Download zip
+3. Unzip file
+4. Import project into IDE
+Then we cun run it and it runs on local server localhost:8080
