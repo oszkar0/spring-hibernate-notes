@@ -36,3 +36,62 @@ Develeopment od Spring file in spring initializr
 3. Unzip file
 4. Import project into IDE
 Then we cun run it and it runs on local server localhost:8080
+
+spring.io - main spring website 
+
+Goals of Spring 
+lightweight debelopment with POJOs
+dependency injection
+minimize amount of code 
+
+
+
+
+Core Container
+Beans, Core, SpEL, Context - factory for creating beans 
+Beans, dependency injection, inversion control: https://www.baeldung.com/spring-bean
+
+Infrastracture 
+AOP: Aspect oriented programming 
+Add functionality to objects declaratively - logginm security transactions 
+
+Data Acces Layer 
+Communicating with databases, it contains JDBC for example , ORM - object relational Mapping Intergration with Hibernate and JPA
+JMS Java message service, Transactions support 
+
+Web Layer
+All web related classes  
+
+Test Layer (Unit, Integration, Mock) 
+Supports test driven development 
+
+
+
+
+
+What are Spring Projects? 
+additionals modules built on top of the core framework for example: Spring Cloud, Spring Security 
+
+
+
+What is Maven? 
+project managment tool
+we can tell which dependencies we need and it auto downloads it for us 
+
+Maven project structure 
+src/main/java - place for source code
+src/main/resources - properties/config files used by your app 
+src/main/webapp - JSP files and web config files 
+src/test - unit testing code
+target - destination directory for compiled code  
+
+Maven Key Concepts 
+pom.xml - list of dependencies to get
+	project meta data - info about project
+	dependencies
+	plugins - additional custom taks to run 
+
+project coordinates - elements 
+group id - name of company, group organization
+Artifact id - name for the project 
+version 
