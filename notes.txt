@@ -85,6 +85,8 @@ src/main/webapp - JSP files and web config files
 src/test - unit testing code
 target - destination directory for compiled code  
 
+
+
 Maven Key Concepts 
 pom.xml - list of dependencies to get
 	project meta data - info about project
@@ -94,4 +96,32 @@ pom.xml - list of dependencies to get
 project coordinates - elements 
 group id - name of company, group organization
 Artifact id - name for the project 
-version 
+version  
+mvnw and mcnw.cmd allow us to run a Maven proejct, downloads right Maven version
+
+
+Application Properties
+Spring Boot loads properties grom application.properties (empty at beginning, we add for example server.port = 9090)
+ 
+example in properties
+coach.name=Mickey Mouse
+
+then in rest controller 
+
+@RestController
+public class FunRestController{
+	@Value("${coach.name}) <- injects value from propeties into coachName
+	private String coachName;
+}
+
+Static Content 
+/src/main/resources/static -> HTML files, CSS, images etc.
+
+
+
+DO NOR USE THE SRC/MAIN/WEBAPP DIR IF APP IS PACKACING, IT ONLY WORKS WITH WAR
+
+Templates 
+Spring Boot includes auto-config for following template engines: FreeMaker, Thymleaf, Mustache 
+
+Unit tests are unit tests 
