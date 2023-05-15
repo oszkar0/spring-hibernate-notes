@@ -125,3 +125,27 @@ Templates
 Spring Boot includes auto-config for following template engines: FreeMaker, Thymleaf, Mustache 
 
 Unit tests are unit tests 
+
+
+Spring Boot Starters
+Collections of Maven dependencies used for certain goal for example spring-boot-starter-web 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+luv2code.com/spring-boot-starters
+
+Spring Booot Starter Parent
+special starter that provides Maven defaults 
+	<parent>
+		Spring Boot version 3.0.0
+		....
+	</parent>
+then all starters inherit version from starter parent 
+
+
+Spring Boot Dev Tools
+spring-boot-devtools - autmatically restarts our apps when code is updated
+In Intellij we have to take additional steps - Preferences-> Build, Execution, Deployment -> Compiler
+Check Box: Build Project Automatically 
+Preferences -> Advanced Settings -> Allow auto-make to ...
