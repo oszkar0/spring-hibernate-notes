@@ -177,3 +177,24 @@ There are other endpoints: auditevents, beans, mappings lov2code.com/actuator-en
 only healt is defaultly exposed, we have to expose other manually
 Well secure the endpoints with logins and passwords later 
 JSON Formatter browser plugin prints parsed info endpoint and thing like this 
+
+
+
+
+Spring Boot Actuator - secure endpoints
+We may not want expose all of information
+We have to add spring-boot-starter-security (artifact id) to dependencies
+When we wnat to access secured enpoints spring will ask to sign in
+Default user name: user
+Check console logs for password.
+When we want to override default user name and generated password
+then in properties
+spring.security.user.name=oskar
+spring.security.user.password=adminadmin
+We can customize Spring Security for Spring Boot Actuator
+(use db for roles, encrypted password - later in the course) 
+To exclude some endpoints from security
+management.endpoints.web.exposure.exclude=health,info
+for more details luv2code.com/actuator-docs
+
+
