@@ -209,3 +209,14 @@ Two options for running the app
 2. in proejct folder (./)mvnw spring-boot:run
 
 
+
+
+Injecting Custom Application Properties 
+We need our apps to be configurable (no hard-coding of values) 
+Read app configuration from properties file
+We can define any custom properties in application.properties
+Your Spring Boot app can access properties using @Value
+for example 
+coach.name=Mickey Mouse
+team.name=The Mouse Club
+then we do @Value("${coach.name}") above private String coachName for example 
