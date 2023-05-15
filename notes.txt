@@ -198,3 +198,14 @@ management.endpoints.web.exposure.exclude=health,info
 for more details luv2code.com/actuator-docs
 
 
+Spring Boot apps from command line 
+Since we are using Spring Boot the server is embedded in out JAR file
+No need to have seoarate server installed/running
+Spring Boot apps are self contained -> mycoolapp.jar contains app code and Tomcat server
+Two options for running the app
+1. use java -jar mycoolapp.jar
+2. use spring boot maven plugin 
+1. go to project folder -> (./ for mac)mvnw package (creates jar file)/(if we have maven installed mvn package) -> cd target -> ls *.jar (to display all jar files) -> java -jar appname
+2. in proejct folder (./)mvnw spring-boot:run
+
+
