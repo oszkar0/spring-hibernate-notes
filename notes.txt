@@ -149,3 +149,31 @@ spring-boot-devtools - autmatically restarts our apps when code is updated
 In Intellij we have to take additional steps - Preferences-> Build, Execution, Deployment -> Compiler
 Check Box: Build Project Automatically 
 Preferences -> Advanced Settings -> Allow auto-make to ...
+
+
+Spring Boot Actuator
+exposes endpoints to monitor and manage our application
+add dependency to POM file
+REST endpoints are auto added to our app 
+(artifact id - spring-boot-starter-actuator) 
+endpoints are prefixed with /actuator
+/actuator/health - used to see if our app is up or down 
+/actuatroe/info  - provides info about app 
+(but its hidden, to expose it managment.endpoints.web.exposure.inlude=healt,info in properties
+managment.info.enc.enabled = true)
+In default there is no info in this endpoint but we can do 
+info.app.name = appname...
+info.app.description = desc...
+info.app.version = version....
+Everything has to be prefixed with info. 
+above things give 
+{
+"app": {
+	"name" = desc...
+	....
+}
+}
+There are other endpoints: auditevents, beans, mappings lov2code.com/actuator-endpoints
+only healt is defaultly exposed, we have to expose other manually
+Well secure the endpoints with logins and passwords later 
+JSON Formatter browser plugin prints parsed info endpoint and thing like this 
