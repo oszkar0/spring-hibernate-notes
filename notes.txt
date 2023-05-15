@@ -220,3 +220,25 @@ for example
 coach.name=Mickey Mouse
 team.name=The Mouse Club
 then we do @Value("${coach.name}") above private String coachName for example 
+
+
+
+Spring Boot Server
+inside application.properties we can configure server port, context path, actuator, security etc 
+List of common properties: luv2code.com/spring-boot-props
+Groupped into Core, Web, Security, Data, Actuator, Integration, DevTools, Testing
+Core properties
+Logging levels - set (info in console) logging levels based on package names for example logging.leve.org.hibernate=TRACE
+Loggin Levels: TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+Log file name
+logging.file=my-crazy-stuff.log luv2code.com/spring-boot-logging
+Server port
+server.port=7070
+Context path of the app
+server.servlet.context-path=/my-silly-app 
+localhost:7070/my-silly-app/.... deafult path for endpoints
+server.servlet.session.timeout=15m
+actuator endpoints to include, exclue as aboce, base path for actuator endpoints
+secyrity login, password 
+data properties - jdbc url, login for db, pasword for db
+
