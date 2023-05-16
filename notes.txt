@@ -242,3 +242,30 @@ actuator endpoints to include, exclue as aboce, base path for actuator endpoints
 secyrity login, password 
 data properties - jdbc url, login for db, pasword for db
 
+
+Inversion of Control
+The approach of outsourcing the construction and management od objects 
+(app calls (Spring Container ->)Object factory to give it a Coach object and the obj factory gives it to the app based on configuration it may give it CricketCoach, HockeyCoach or BaseballCoach)  
+Spring Container primary functions:
+-create and manage objects(Inversion of Control)
+-Inject object dependencies(Dependency injection)
+Configuring Spring Container
+might be done by
+XML configuration file(legacy)
+Java Annotations(modern)
+Java Source Code(modern)
+
+
+Dependency Injection
+The dependency inversion principle
+The client delegates to another object the responsibility od providing its dependencies
+Injection Types
+Constructor injection - use when you have required dependencies, generally recommended by spring development team
+Setter injection - use when you have optional dependencies, if dependency is not provided, our app can provide deafult logic
+Spring AutoWiring
+Spring will look for a class that matches by type: class or interface
+Spring will inject it automatically hence it is autowired 
+@Component annotation marks the class as a Spring Bean, makes bean available for dependency injection
+A Spring Bean is just a regular Java class that is managed by Spring
+@Autowired over contructor tell Spring to inject a dependency 
+
