@@ -295,3 +295,11 @@ Inject dependencies by setting field values on your class directly (even private
 Simply add @Autowired over the field you want to inject to 
 @Autowired
 private String myCoach 
+
+
+
+Qualifiers 
+(If we have more Coach interface implementators, Spring wont be able to decide which implementator to use
+thats where @Qaulifier comes in)
+Code example in section 02 project 04
+For Setter and Constructor its similar
