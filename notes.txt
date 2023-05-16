@@ -286,3 +286,12 @@ If we have com.oskar.utils we can pass it in anotation (as in project 02 of 02 s
 Setter Injection 
 inject dependencies by calling setter method(s) on our class 
 We can use it with any method, just give @Autowired annotation 
+
+
+Field Injection
+Not recommended by spring development team
+It makes code  harder to unit test 
+Inject dependencies by setting field values on your class directly (even private fields) 
+Simply add @Autowired over the field you want to inject to 
+@Autowired
+private String myCoach 
