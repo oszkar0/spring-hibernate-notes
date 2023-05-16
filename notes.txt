@@ -281,3 +281,8 @@ Spring will scan our Java classes for special annotations, automatically registe
 Default scanning is fine if everything is under the package that main application class is 
 eg com.oskar.springcoredemo
 If we have com.oskar.utils we can pass it in anotation (as in project 02 of 02 section)  
+
+
+Setter Injection 
+inject dependencies by calling setter method(s) on our class 
+We can use it with any method, just give @Autowired annotation 
