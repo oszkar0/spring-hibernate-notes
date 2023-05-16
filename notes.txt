@@ -269,3 +269,15 @@ Spring will inject it automatically hence it is autowired
 A Spring Bean is just a regular Java class that is managed by Spring
 @Autowired over contructor tell Spring to inject a dependency 
 
+
+
+
+Component Scanning 
+Spring will scan our Java classes for special annotations, automatically registers the beans in the Spring container 
+@SpringBootApplication is composed od the following annotations:
+@EnableAutoConfiguration enables spring boots auto-config support
+@ComponentScan enables component scanning od current package, recursively scans sub-packages
+@Configuration able to register extra beans with @Bean or import other configuration classes 
+Default scanning is fine if everything is under the package that main application class is 
+eg com.oskar.springcoredemo
+If we have com.oskar.utils we can pass it in anotation (as in project 02 of 02 section)  
