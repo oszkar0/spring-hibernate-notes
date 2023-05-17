@@ -11,11 +11,9 @@ public class DemoController {
     //define private field for the dependency
     private Coach myCoach;
 
-    //add @qualifier
-    //bean name inside brackets but starting with lower case letter
-    //to specify bean in dependency injection
+    //setter injection
     @Autowired
-    public DemoController(@Qualifier("footballCoach") Coach theCoach){
+    public void setCoach(Coach theCoach){
         this.myCoach = theCoach;
     }
     @GetMapping("/dailyworkout")
