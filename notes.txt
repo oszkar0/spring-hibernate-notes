@@ -360,3 +360,12 @@ We can add custom code during bean destruction
 -Calling custom bussines logic methods @PreDestroy
 -Cleaning up handles to resources (db,sockets,file etc)
 
+
+
+Configuring Beans with Java Code
+First we make a class with @Configuration annotation
+Then inside this class we make method with @Bean annotation which returns that bean and has a name of that bean (which we would use in the @Qualifier) 
+eg public Coach swimCoach(){
+   	return new SwimCoach();
+   }
+Use case for @Bean we may not have access to the source code of third party class so we cant add @Component 
