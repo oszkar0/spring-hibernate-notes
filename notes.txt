@@ -334,3 +334,16 @@ Disadvanatges
 -may not discober cinfuguration issues untill too late
 -need to make sure you have enough memory for all beans once created 
  
+
+
+Bean Scopes
+Scope refers to lifecycle of a bean (how long does the bean live, how many instances are created, how is the bean shared)
+Default Scope is singleton - Spring Container created only one instance of a bean, it is cached in mem, all dependency injections for that bean will reference the same bean
+We can explicitly specify bean scope by adding above class
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+other scopes - 
+prototype, creates a new bean instance for each container request
+request, scoped to an http web request, only used for web apps 
+session, scoped to http web session -||-
+global-session, scoped to a global http web session -||-
+
