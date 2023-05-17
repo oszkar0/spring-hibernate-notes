@@ -303,3 +303,14 @@ Qualifiers
 thats where @Qaulifier comes in)
 Code example in section 02 project 04
 For Setter and Constructor its similar
+
+
+
+Primary anotation
+alternate solution to qualifiers
+it passes the responisibility to the classes not setter/constructor
+then we dont have to use the @Qualifier
+There must be only one @Primary
+If we mix @Primary and @Qualifier, the @Qualifier has higher priority 
+@Qualifier is more recommended 
+If we add multiple @Primary we get exception 
