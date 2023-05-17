@@ -314,3 +314,23 @@ There must be only one @Primary
 If we mix @Primary and @Qualifier, the @Qualifier has higher priority 
 @Qualifier is more recommended 
 If we add multiple @Primary we get exception 
+
+
+
+Lazy Initialization
+(By default, when our app starts, all beans are initialized 
+Spring will create an instance od each and make them available)
+Instead of creating all beans up frony, we can specify lazy initialization
+A bean will be only initialized if:
+It is needed for dependency injection
+Or it is explicitly requested
+We just have to add @Lazy annotation to a given class 
+We can also set that in configuration file - spring.main.lazy-initialization=true
+Advantages:
+-only creates objects as needed
+-may help with faster startup if you have large number of components
+Disadvanatges 
+-If you have web related components like @RestControler, not created until requested  
+-may not discober cinfuguration issues untill too late
+-need to make sure you have enough memory for all beans once created 
+ 
