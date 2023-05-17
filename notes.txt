@@ -347,3 +347,13 @@ request, scoped to an http web request, only used for web apps
 session, scoped to http web session -||-
 global-session, scoped to a global http web session -||-
 
+
+
+Bean Lifecycle Methods/Hooks
+We can add custom code during bean initialization @PostContruct
+-Calling custom bussines logic methods
+-Setting up handles to resources (db,sockets,file etc)
+We can add custom code during bean destruction
+-Calling custom bussines logic methods @PreDestroy
+-Cleaning up handles to resources (db,sockets,file etc)
+
