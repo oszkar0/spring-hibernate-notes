@@ -392,3 +392,20 @@ Benefits of using JPA
 How does JPA/Hibernate to JDBC
 JPA uses JDBC for all database communications
 
+Setting Up Spring Boot project with Hibernate JPA
+EntityManager is main component dor creating queries etc, it is from JPA
+Based on configs, Spring Boot will automatically create the beans:
+DataSource, EntityManager, ... 
+We can then inject these into out app 
+In spring initializr we have to add JDBC, and Spring Data JPA
+Spring Boot will automatically configure our data source
+DB connecstion info will be taken from application.properties
+(
+spring.datasource.url=jdbc:mysql://localhost3306/student_tracker
+spring.datasource.username=springstudent
+spring.datasource.password=springstudent
+)
+No need to give JDBC driver class name, Spring Boot will auto detect it based on url 
+ 
+
+
