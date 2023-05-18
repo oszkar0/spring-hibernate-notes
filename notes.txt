@@ -369,3 +369,26 @@ eg public Coach swimCoach(){
    	return new SwimCoach();
    }
 Use case for @Bean we may not have access to the source code of third party class so we cant add @Component 
+
+
+
+
+
+Hibernate / JPA overview 
+framework for persisting/saving objects in database
+Hibernate handles all of low-level sql
+Minimizes the amount of JDBC code we have to develop 
+Provides the Object to Relational Mapping
+JPA is Jakarta Persistence API, Standard API for Obj-to-Relational Mapping ORM
+Only a specifiaction, defines a set of interfaces, requires an impelmentation to be usable 
+Hibernate is an Implementation od JPA and EclipseLink is another implementation 
+Benefits of using JPA 
+-By using a standard API, we are not locked to vendor's implementation
+-Maintan portable, flexible code by coding to JPA spec
+-Can theoreticalyy switch vendor implementations  
+(Saving object with JPA, e.g we have an object student , we do entityManager.persist(student), entityManager is JPA helper object)
+(Retrive object student = entityManager.find(Student.class, id))
+
+How does JPA/Hibernate to JDBC
+JPA uses JDBC for all database communications
+
