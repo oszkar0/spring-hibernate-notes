@@ -427,3 +427,28 @@ Primary key - Uniquely identifies each row in a table, cannot contain NULL value
 You can define your own generation startegy
 Create implementation of org.hibernate.id.IdentifierGenerator
 Override the method: public Serializable generate(...)
+
+Saving a Java Object with JPA
+We ll make Data Access Object (Student Access Object) DAO helper class to communicate 
+should have methods
+save()
+findById()
+findAll()
+update()
+delete()
+deleteAll()
+DAO needs a JPA Entity Manager - the main component for saving / retrieving entities  
+Entity Manager need Data Source - defines database connection info
+Entity manager and Data Source is auto created by Spring Boot
+based on the app properties file
+We can autowire/inject Entity Manager into our DAO 
+Student DAO <-> Entity Manager <-> Data Source <-> DB
+@Transactional annotation - auto begin and end a transaction of out JPA code, we add this above the method 
+Sprig provides the @Repository annotation 
+-sub annotation of @Component 
+it is for annotating DAOs, we put it over DAO class, translates JDBC exceptions  
+ 
+
+
+
+
