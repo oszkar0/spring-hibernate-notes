@@ -459,3 +459,15 @@ Retrieving a Java Object with JPA
                                      class       pk
 Student myStudent = entityManager(Student.class, 1); if not found returns null
 
+
+Querying Objects with JPA
+JPA Query Language - query lang for retrieving objects
+Similar in concept to SQL
+JPQL is based on entity name and entity fields
+TypedQuery<Class> querry = entityManager.createQuery(query ("FROM Student- entity name and entity fields), class);
+List<Class> list = query.getResultList(); -> that does the query
+query looks like "FROM Student WHERE lastName = 'Kola' OR firstName = 'Oskar'"
+in queries we use Named Parameters prefixed with colon
+"FROM Student WHERE lastName = :someLastName OR firstName = 'Oskar'"
+ query.setParameter("someLastName" , argPassedToMethod)
+
