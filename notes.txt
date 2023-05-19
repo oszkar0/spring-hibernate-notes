@@ -485,3 +485,13 @@ or multiple objects
 int numRowsUpdated - entityManager.createQuery("UPDATE STUDENT SET lastName='Tester'").executeUpdate();
 
 
+
+Deleting objects with JPA
+one object
+int id = 1;
+Student student = enitityManager.find(Student.class, id);
+entityManager.remove(student);
+multiple object
+int numRowsDeleted = entityManager.createQuery("DELETE FROM Student WHERE lastName="Szysiak").executeUpdate();
+
+
