@@ -448,7 +448,11 @@ Sprig provides the @Repository annotation
 -sub annotation of @Component 
 it is for annotating DAOs, we put it over DAO class, translates JDBC exceptions  
  
-
+Primary keys
+Change auto increment start value
+alter table student_tracker.student auto_increment=3000
+Reset table (removes all rows, resets auto increment)
+truncate student_tracker.student
 
 
 
