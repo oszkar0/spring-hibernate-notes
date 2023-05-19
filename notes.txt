@@ -495,3 +495,8 @@ multiple object
 int numRowsDeleted = entityManager.createQuery("DELETE FROM Student WHERE lastName="Szysiak").executeUpdate();
 
 
+
+Create database tables with JPA
+spring.jpa.hibernate.dll-auto=(PROPERTY-VALUE)create!!!!!!!!!!!!!becareful - when you run your app JPA wukk drop tables then create them based on annoations in java code
+we have other proprty values such as drop, create only, non...
+If we want to create tables once and keeep data we should choose update property value 
