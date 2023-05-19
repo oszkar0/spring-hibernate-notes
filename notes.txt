@@ -455,4 +455,7 @@ Reset table (removes all rows, resets auto increment)
 truncate student_tracker.student
 
 
+Retrieving a Java Object with JPA  
+                                     class       pk
+Student myStudent = entityManager(Student.class, 1); if not found returns null
 
