@@ -471,3 +471,17 @@ in queries we use Named Parameters prefixed with colon
 "FROM Student WHERE lastName = :someLastName OR firstName = 'Oskar'"
  query.setParameter("someLastName" , argPassedToMethod)
 
+
+
+
+
+
+Updating an Object with JPA
+one object 
+Student theStudent - enititymanager.find(Student.class, 1);
+theStudent.setFirstName("Scooby"); 
+entitymanager.merge(theStudent); 
+or multiple objects
+int numRowsUpdated - entityManager.createQuery("UPDATE STUDENT SET lastName='Tester'").executeUpdate();
+
+
