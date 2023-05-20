@@ -500,3 +500,40 @@ Create database tables with JPA
 spring.jpa.hibernate.dll-auto=(PROPERTY-VALUE)create!!!!!!!!!!!!!becareful - when you run your app JPA wukk drop tables then create them based on annoations in java code
 we have other proprty values such as drop, create only, non...
 If we want to create tables once and keeep data we should choose update property value 
+
+
+
+
+What Are REST Services
+(e.g We want to get weather in some city from external weather service, we send request with a city name, and the service gives us the weather report) 
+How we connect?
+We can make a REST API calls over HTTP
+REST - REpresentational State Transfer 
+REST is language independent, the clienct app can use and language and the server app can also use any language
+REST app can use any data format
+Commonly used XML and JSON(most popular) - JavaScript Object Notation
+(e.g for openweathermap.org 
+the api documentation gives us following
+api.openweathermap.org/data/2.5/weather?q={city name}
+or
+api.openweathermap.org/data/2.5/weather?q={city name},{country code}
+The weather service responds with JSON
+{
+...
+"temp": 14,
+...
+"name": "London",
+...
+}
+)
+(
+e.g
+CRM app -> CRM Service (spring-rest) server
+app calls service get customers
+server returns customer list
+We will create CRM Service App
+)
+We can call it REST(ful) API, webservices, services
+
+
+
