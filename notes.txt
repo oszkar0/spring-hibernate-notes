@@ -605,9 +605,13 @@ Client tool
 send HTTP requests to the REST Web Service/API
 plenty tool available curl, postman
 we'll use postman www.getpostman.com
+app for inspecting requests
 }
 
 
+Spring Boot REST Controller 
+REST Client -> /test/hello -> REST Service 	<- we will be writing this code 
+REST Client <- "Hello World!" <- REST Service
 
 
 
