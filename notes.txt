@@ -615,3 +615,17 @@ REST Client <- "Hello World!" <- REST Service
 
 
 
+Java JSON Data Binding 
+Data Binding is the process of converting JSON data to Java POJO 
+Json Data-> data binding -> Java POJO also known as mapping serialziation marshalling 
+Json Data<- data binding <- Java POJO
+Spring uses the Jackson Project behind the scenes
+Jackson handles data binding between JSON and JAVA POJO
+Spring auto includes dependecy for Jackson 
+Jackson will call appropriate getter/setter method 
+JSON -> POJO Jackson call setter methods to create an object
+POJO -> JSON Jackson call getter method to create JSON 
+JSON data being passed to rest controller is converted to POJO
+Java object being returned from rest controller is converted to JSON
+all happends automatically 
+ 
