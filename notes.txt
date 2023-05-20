@@ -537,3 +537,31 @@ We can call it REST(ful) API, webservices, services
 
 
 
+JSON Basics
+JavaScript Object Notation
+Lightweight data format for storing and exchanging data
+Language independent
+{	<- curely braces define objects in JSON
+	"id": 14,
+	"firstName": "Mario",
+	"lastName": "Rossi",
+	"active": true,
+	"address": {
+			"street": "Aleje 7",	<- nested object
+			"city": "Warszawa"
+			},
+	"languages": ["Java", "C#", "Python"] <-array
+			
+}
+Name always in double qutoes
+JSON values
+numbers - no quotes
+string - double quotes
+boolean - true, false
+nested json object
+array
+null
+
+
+
+
