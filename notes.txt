@@ -629,3 +629,9 @@ JSON data being passed to rest controller is converted to POJO
 Java object being returned from rest controller is converted to JSON
 all happends automatically 
  
+
+
+Spring Boot REST POJO 
+we will be creating a service to return list of students through /api/students
+Our REST service will return List<Student>
+need to convert that list to JSON -> Jackson will do it automatically 
