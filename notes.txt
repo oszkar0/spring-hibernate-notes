@@ -650,3 +650,17 @@ way of parametrizing an endpoint
 @GetMapping("/student/{studentId}")
 public Student getStudent(@PathVariable int studentId) <- name must match
 
+
+
+
+
+Spring Boot REST Exception Handling
+We can throw an exception pojo for example
+StudentErrorResponse with fields status, message, timeStamp 
+Jackson will convert it and give a JSON file
+1. We create an exception class StudentNotFoundException
+2. If we cant find a student we throw this exception
+3. Then we do @ExceptionHandler
+4. The exceptioon handler should return ResponseEntity<StudentErrorResponse> 
+@ExceptionHandler
+public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc)... 
