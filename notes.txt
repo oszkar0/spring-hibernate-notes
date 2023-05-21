@@ -664,3 +664,15 @@ Jackson will convert it and give a JSON file
 4. The exceptioon handler should return ResponseEntity<StudentErrorResponse> 
 @ExceptionHandler
 public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc)... 
+
+
+
+
+Spring Boot REST global exception handler BEST PRACTICE
+(Exception handler code is only for the specific REST controller, cant be reused by other controllers, we need global exceptions handlers - promotes reuse, centralizes exzception handling)
+@ControllerAdvice annoatation might help
+it is simialt to interceptor/filter 
+pre - process requests to controlers 
+post - process response to handle exceptions
+perfect fot global exception handling 
+example of Aspect Oriented Programming 
