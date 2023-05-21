@@ -676,3 +676,22 @@ pre - process requests to controlers
 post - process response to handle exceptions
 perfect fot global exception handling 
 example of Aspect Oriented Programming 
+
+
+
+
+REST API Design
+1. Review API requirements
+2. Identify main resource/entity (in api use plural form eg employess)
+3. Use HTTP methods to assign action on resource
+		|
+HTTP Method			CRUD Action					Endpoint
+POST				Create new entity				/api/employees
+GET				Read a list of entities or single entity	/api/employees or /api/employees/{employeeId} 
+PUT 				Update an existing entity			/api/employees
+DELETE				Delete an existing entity			/api/employees/{employeeId}
+Examples later on in the course 
+
+DON'T INCLUDE ACTION IN THE ENDPOINT - /api/updateEmployee etc 
+
+
