@@ -635,3 +635,18 @@ Spring Boot REST POJO
 we will be creating a service to return list of students through /api/students
 Our REST service will return List<Student>
 need to convert that list to JSON -> Jackson will do it automatically 
+
+
+
+
+
+
+Path Variables
+If we want to retrieve a single student by id
+GET /api/students/{studentId} <-path variable
+/api/students/1 
+/api/students/0 
+way of parametrizing an endpoint
+@GetMapping("/student/{studentId}")
+public Student getStudent(@PathVariable int studentId) <- name must match
+
