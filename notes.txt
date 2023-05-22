@@ -695,3 +695,19 @@ Examples later on in the course
 DON'T INCLUDE ACTION IN THE ENDPOINT - /api/updateEmployee etc 
 
 
+
+Spring Boot Service Layer
+Purpose
+-service facade design pattern
+-intermediate layer for custom business logic
+-integrate data from multiple sources 
+Employee REST Controller <--> EMPLOYEE SERIVE <--> Employee DAO <--> database 
+Integrate Multiple Data Sources
+Employee REST Controller <--> EMPLOYEE SERIVE <--> Employee DAO <--> database 
+					      <--> Skills DAO   <--> Another database
+					      <--> Payroll DAO   <--> Another database
+@Service annotation
+-sub annotation of @Component
+applied to Service implementations
+Spring will auto register the Service impl
+thatnks to component-scanning 
