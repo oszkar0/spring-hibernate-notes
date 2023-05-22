@@ -710,4 +710,14 @@ Employee REST Controller <--> EMPLOYEE SERIVE <--> Employee DAO <--> database
 -sub annotation of @Component
 applied to Service implementations
 Spring will auto register the Service impl
-thatnks to component-scanning 
+thatnks to component-scanning
+
+
+
+
+Service Layer Best Practice
+Best practice is to apply transactional boundaries at the service layer
+It is the service layer's responisbility to manage transaction boundaries
+For implementation code
+	-apply @Transactional on service methods
+	-remove @Transactional on DAO methods if they already exist 
