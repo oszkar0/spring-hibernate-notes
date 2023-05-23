@@ -791,3 +791,16 @@ Advanced features of Spring Data REST
 We can change base path in properties 
 Theres is a difference in PUT http request
 we pass data, but id is passed in the url /magic-api/employees/4
+
+
+
+
+Spring Data REST Configs and Sorting
+We can specify plural name of entity by an anotation - @RepositoryRestSoruce(path="members") over the JpaRepository extending interface
+By default Spring Data REST will return first 20 elements
+(PageSize = 20), we can navigate to the different pages of data using query param
+localhost:8080/employees?page=0
+other properties: luv2code.com/spring-boot-props , search for spring.data.rest.*
+We can sort by the property names of entity
+Sort by first name, descending: localhost:8080/employees?sort=firstName,desc
+localhost:8080/employees?sort=firstName,lastName,asc
