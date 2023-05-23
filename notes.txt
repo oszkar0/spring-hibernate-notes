@@ -740,3 +740,54 @@ Advanced features available for:
 extending and adding custom queries
 query domain specific language
 defining custom methods (low-level coding)
+
+
+
+
+Spring Data REST
+spring.io/projects/spring-data-rest
+solution which given JpaRepository will give you REST CRUD implementation
+How does it work in background?
+Spring Data REST will scan our project for JpaRepository
+Expose RESt APIs for each entity type for our JpaRepository
+By default, Spring Data REST will create endpoints based on entity type
+In a simple pluralized form (first char of entity type i lowercase, then adds an s to that)
+We have to add Spring Data REST in our POM file
+(we need to have 3 things - entity, JpaRepository extending interface, Maven POM file dependency: spring-boot-starter-data-rest)
+Now our system architecture will lok like:
+Spring Data REST /employees <--> Employee Repository <--> database
+(HATEOAS
+Spring Data REST endpoints are HATEOAS compliant 
+Hypermedia as the Engine of Application State
+Hypermedia-driben sites provide information to access RESt interfaces
+Think of it as meta-data for RESt data
+example:
+{	
+	"id": 14,
+	"firstName": "Mario",	<-employee data
+	"lastName": "Rossi",
+	"_links": {
+		"self": {
+			"href": "localhost:8080/employees/3"
+			},						<-response meta-data links to data 
+		"employee: {
+			"href": "localhost:8080/employees/3"
+			}
+		}
+	or
+	"page": {
+		"size": 20,
+		"totalElements": 5,
+		"totalPages": 1
+	}
+}
+
+} 
+HATEOAS uses HyperText Application Languiage data format 
+Advanced features of Spring Data REST
+-pagination, sorting, searching
+-extending and adding custom queries with JPQL
+-Query Domain Specisfic Language
+We can change base path in properties 
+Theres is a difference in PUT http request
+we pass data, but id is passed in the url /magic-api/employees/4
