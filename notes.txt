@@ -721,3 +721,22 @@ It is the service layer's responisbility to manage transaction boundaries
 For implementation code
 	-apply @Transactional on service methods
 	-remove @Transactional on DAO methods if they already exist 
+
+
+
+
+Spring Data JPA 
+spring.io/projects/spring-data-jpa
+solution which gives us a CRUD implementations given etity type and primary key
+Spring Data JPA prvides the interface: JpaRepository
+it exposes methods (some by inheritance from parents)
+suchas as  findaAll(), findById(), save, deleteById and others 
+we just have to plug in Entity type and primary key type 
+1. Extend JpaRepository interface
+2. Use your repository in your app
+(No need for implementation) 
+public interface EmployeeRepository extends JpaRepository<Employee(entity type), Integer(primary key>
+Advanced features available for:
+extending and adding custom queries
+query domain specific language
+defining custom methods (low-level coding)
