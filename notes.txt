@@ -804,3 +804,47 @@ other properties: luv2code.com/spring-boot-props , search for spring.data.rest.*
 We can sort by the property names of entity
 Sort by first name, descending: localhost:8080/employees?sort=firstName,desc
 localhost:8080/employees?sort=firstName,lastName,asc
+
+
+
+Spring Boot REST API security
+What does it do?
+Secure Spring Boot REST APIs
+Define users and roles
+Protect URLs based on role
+Store users, asswords and roles in DB
+Spring Security Manual luv2code.com/spring-security-reference-manual
+Spring Security Model
+-Spring Security defines a framework for security 
+-Implemented using Servlet filters in the background 
+	- servlet filters are used to pre-process/post-process web requests
+	- servlet filters can route web requests based on security logic
+	- spring provides a bulk of secuirty functionality with servlet filters 
+-Two methods of securing an app: declarative and programmatic 
+
+Web Browser <--> Spring Security Filters <--> Protected Web Resource
+			|
+			------------> app security configuration <-> users passwords roles
+
+Security Concepts
+-Authentication - check user id and password with credentials stored in db/app
+-Authorization	- check to see if user has an authorized role
+
+Declarative Security
+-define apps security constraints in configuration - handled by all Java config @Configuration
+-provides separation of concerns between application code and security 
+
+Programmatic Security
+-Spring Security provides an API for custom application coding
+-Provides greater customization for specific app requirements 
+
+Enabling Spring Security
+1. add spring-boot-starter-security to pomc.xml
+2. this will auto secure all endpoints for our app
+3. now when we acces app spring will prompt for login and password 
+
+Authentication and Authorization
+In-memory
+JDBC
+LDAP
+Custom/Pluggable
