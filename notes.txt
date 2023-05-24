@@ -848,3 +848,26 @@ In-memory
 JDBC
 LDAP
 Custom/Pluggable
+
+
+
+
+
+Spring Boot Security - Basic Configuration
+We have 
+user id 	password 	roles
+john		test123		employee
+mary		test123		employee/manager/admin
+Development process
+1. Create Spring Security Configuration class @Configuration
+2. Add users passwords,roles
+Spring Security Password Storage
+{id}encodedPassword
+
+id	description
+noop	plain text passwords
+bcrypt	BCrypt password hashing
+...
+e.g {noop}test123
+If we define our users in @Configuration class Spring Boot will not use the user from the properties file
+
