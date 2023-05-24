@@ -871,3 +871,26 @@ bcrypt	BCrypt password hashing
 e.g {noop}test123
 If we define our users in @Configuration class Spring Boot will not use the user from the properties file
 
+
+
+
+
+Restrict access based on roles
+Our example
+read all - employee
+read single - employee
+create - manager
+update - manager
+delete - admin
+Restricitng access to roles
+requestMatchers(httpMethod (e.g HttpMethod.POST) ,path)	(** - all sub-paths)
+	.hasRole(role);
+Spring security can protect against CSRF attacks
+Embeed additional auth data/token into all HTML forms
+On subsequent request, web app will verify token before processing
+Spring Security team recommends to use CSRF protection for any normal browser web requests, traditional web apps with html forms to add/ modify data
+If we are building a REST API for non-browser clients we may want to disable CSRF protection
+In general not required for stateless REST APIs that use POST,PUT,DELETE and/or PATCH 
+
+
+
