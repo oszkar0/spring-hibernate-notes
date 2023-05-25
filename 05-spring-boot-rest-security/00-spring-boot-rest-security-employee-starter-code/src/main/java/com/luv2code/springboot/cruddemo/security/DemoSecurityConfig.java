@@ -13,9 +13,20 @@ import javax.sql.DataSource;
 @Configuration
 public class DemoSecurityConfig {
     //add support for JDBC, no more hardcoded users
+    //scripts used for:
+    //plain text passwords 04 - sqlscript form sqlscipts folder
+    //bcrypt passwords 05 - sqlscript form sqlscipts folder
+    //custom filed names and table names  06 - sqlscript form sqlscipts folder
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource){
-        return new JdbcUserDetailsManager(dataSource);
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+
+        //query to retrieve a user by usename
+        jdbcUserDetailsManager.setUsersByUsernameQuery("select user_id, pw, active from members where user_id=?");
+        //query to retrieve the authorities/roles by username
+        jdbcUserDetailsManager.setAuthoritiesByUsernameQuery("select user_id, role from roles where user_id=?");
+
+        return jdbcUserDetailsManager;
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{

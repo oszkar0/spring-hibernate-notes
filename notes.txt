@@ -925,3 +925,13 @@ Length of encoded password field bcrypt + {bcrypt} is 68
 Password from the db is never decrypted (input password is encrypted and compared to the one from db(b crypt is one way encryption algorithm)
 
 
+
+
+
+Spring Boot REST API Security - Custom Tables and Using Hibernate to use roles
+To use cutom tables we have to tell spring how to find user by user name
+and provide query to find authorities/roles by user name
+Using Hibernate to use roles
+https://www.luv2code.com/downloads/udemy-spring-boot-3/bonus-spring-boot-rest-security-jpa-hibernate-bcrypt/bonus-lecture-spring-boot-rest-security-jpa-hibernate-bcrypt.pdf  
+
+
