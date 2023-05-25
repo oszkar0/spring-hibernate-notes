@@ -935,3 +935,25 @@ Using Hibernate to use roles
 https://www.luv2code.com/downloads/udemy-spring-boot-3/bonus-spring-boot-rest-security-jpa-hibernate-bcrypt/bonus-lecture-spring-boot-rest-security-jpa-hibernate-bcrypt.pdf  
 
 
+
+
+
+
+Spring MVC with Thymleaf 
+Thymleaf is a Java templating engine
+Commonly used to generate the HTML views for web apps
+However it is a general purpose templating engine
+can use it outside of web apps 
+It is a separate project unrelated to spring.io but there is a lot of synegy between those two
+What is Thymleaf template
+Can be an HTML page with some Thymlea expressions
+Include dynamic content from Thyleaf expressions
+Can acces Java code, objects, spring beans 
+Where is the Thymlead template processed
+In a web app Thymleaf is processed on the server 
+Results included in HTML return to browser 
+Place Thymleaf templates in src/main/resources/templates
+
+
+
+
