@@ -956,4 +956,15 @@ Place Thymleaf templates in src/main/resources/templates
 
 
 
+Spring MVC with Thymeleaf and CSS
+We can use 
+Local CSS files 
+-create CSS file in resources/static/css/demo.css
+-apply css in html file
+- we can install bootstrap css files 
+Remote CSS files
+-we give an href to css placed in the web
+
+
+
 
