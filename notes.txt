@@ -894,3 +894,34 @@ In general not required for stateless REST APIs that use POST,PUT,DELETE and/or 
 
 
 
+Spring Boot REST API Security - JDBC Authentication
+(We put logins, passwords and roles in a database) 
+Spring Security can read user account info from db
+By default we have to follow Spring Security's predefined table schemas 
+(We can also customize table chemas - we will be rsponisble for developing the code to acces the data (using JDBC, JPA))
+Development process
+1. Develop SQL script to set up database tables
+2. Add db supoort to POM.xml
+3. Create JDBC properties file 
+4. Update Spring Security Configuration to use JDBC 
+Spring Security Database Schema
+users 0:n authorities(roles)
+username  username (fk)
+password  authority
+enabled 
+
+
+
+
+Spring Boot REST API Security - BCrypt password encryption
+Spring security recommends bcrypt algorithm
+which perform one-way encrypted hashing
+add a random salt to the password for additional protection
+includes support to defeat brute force attacks 
+How to get a Bcrypt password
+Use a website utility to perform the encryption
+Write Java code to perform the encryption
+Length of encoded password field bcrypt + {bcrypt} is 68
+Password from the db is never decrypted (input password is encrypted and compared to the one from db(b crypt is one way encryption algorithm)
+
+
