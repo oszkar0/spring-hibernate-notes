@@ -30,8 +30,18 @@ public class EmployeeController {
 		List<Employee> theEmployees = employeeService.findAll();
 		// add to the spring model
 		theModel.addAttribute("employees", theEmployees);
+				//folder
+		return "employees/list-employees";
+	}
 
-		return "list-employees";
+	@GetMapping("/showFormAdd")
+	public String showFormForAdd(Model theModel){
+		//create model attribute to bind form data
+		Employee theEmployee = new Employee();
+
+		theModel.addAttribute("employee", theEmployee);
+                //folder
+		return "employees/employee-form";
 	}
 }
 

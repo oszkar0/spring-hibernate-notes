@@ -968,3 +968,14 @@ Remote CSS files
 
 
 
+Thymeleaf expressions
+form - kind of object which asks for data and stores input info{
+th:action - location to send form data
+th:object - reference to model attribute
+th:field  - bind input filed to a property on model attribute 
+luv2code.com/thymleaf-create-form
+}
+when form is loaded will call employee.get... to fill the fields (in our case it is empty)
+when is submitted calls employee.set....
+Post/Redirect/Get - pattern when we redirect to the list of employedd luv2code.com/post-redirect-get
+
