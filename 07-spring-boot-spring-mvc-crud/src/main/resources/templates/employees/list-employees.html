@@ -47,6 +47,13 @@
 					   class="btn btn-info btn-sm">
 						Update
 					</a>
+
+					<!-- Add "delete: button -->
+					<a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}"
+						class="btn btn-danger btn-sm"
+						onclick="if (!confirm('Are you sure you want to delete this employee?'))) return false"> <!--Java Script to promt user before deleting -->
+						Delete
+					</a>
 				</td>
 			</tr>
 		</tbody>		
