@@ -43,7 +43,7 @@
 				<td th:text="${tempEmployee.email}" />	
 				<!-- Add update button link -->
 				<td>									<!-- It will append to URL ?employeeId=xxx -->
-					<a th:href="@{/employees/showFormAdd(employeeId=${tempEmployee.id})}"
+					<a th:href="@{/employees/showFormUpdate(employeeId=${tempEmployee.id})}"
 					   class="btn btn-info btn-sm">
 						Update
 					</a>
