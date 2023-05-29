@@ -2,14 +2,16 @@ package com.oskar.demomvcsecurity.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class DemoSecurityConfig {
     @Bean
-    public InMemoryUserDetailsManager userDetailsManager(){
+    public InMemoryUserDetailsManager userDetailsManager() {
         UserDetails john = User.builder()
                 .username("john")
                 .password("{noop}test123")
@@ -29,5 +31,21 @@ public class DemoSecurityConfig {
                 .build();
 
         return new InMemoryUserDetailsManager(john, marry, susan);
+    }
+
+    //conifgure custom loggin site
+    @Bean
+    public SecurityFilterChain filterCHain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(configurer ->
+                        configurer
+                                .anyRequest().authenticated() //any request must be logged in
+                )
+                .formLogin(form ->
+                        form
+                                .loginPage("/customLoginPage")
+                                .loginProcessingUrl("/authenticateTheUser") //login form should POST data to this url for processing, spriing security handles everythonh at our custom processing url
+                                .permitAll() //allow everyone to enter that url
+                );
+        return http.build();
     }
 }
