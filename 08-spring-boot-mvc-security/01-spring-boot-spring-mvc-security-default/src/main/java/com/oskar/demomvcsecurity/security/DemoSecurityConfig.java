@@ -45,7 +45,11 @@ public class DemoSecurityConfig {
                                 .loginPage("/customLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser") //login form should POST data to this url for processing, spriing security handles everythonh at our custom processing url
                                 .permitAll() //allow everyone to enter that url
+                )
+                .logout( logout -> logout.permitAll()
                 );
+
+
         return http.build();
     }
 }

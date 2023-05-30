@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Oskar Company Home Page</title>
@@ -7,6 +7,13 @@
 <body>
     <h2>Oskar Company Home Page</h2>
     <hr>
-    Welcome to the Oskar company homepage
+    <p>
+        Welcome to the Oskar company homepage
+    </p>
+
+    <!-- Add logout button -->
+    <form   action="#" th:action="@{/logout}" method="POST">
+        <input type="submit" value="Logout">
+    </form>
 </body>
 </html>
