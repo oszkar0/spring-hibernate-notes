@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="thymeleafdemo" />
+        <module name="07-spring-boot-spring-mvc-crud" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="07-spring-boot-spring-mvc-crud" options="-parameters" />
       <module name="thymeleafdemo" options="-parameters" />
     </option>
   </component>
