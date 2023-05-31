@@ -50,6 +50,9 @@ public class DemoSecurityConfig {
                                 .permitAll() //allow everyone to enter that url
                 )
                 .logout( logout -> logout.permitAll()
+                )
+                .exceptionHandling(configurer ->
+                        configurer.accessDeniedPage("/access-denied") // when user is not authorized then he is redirected to this url
                 );
 
 
