@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org">
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      xmlns:sec="http://www.thymleaf.org/extras.spring-security">
+        <!-- extra namespace for getting logged user username and roles-->
 <head>
     <meta charset="UTF-8">
     <title>Oskar Company Home Page</title>
@@ -10,6 +12,13 @@
     <p>
         Welcome to the Oskar company homepage
     </p>
+
+    <hr>
+        <!--display username and role based on spring security-->
+        User: <span sec:authentication="principal.username"></span>
+        <br><br>
+        Role(s): <span sec:authentication="principal.authorities"></span>
+    <hr>
 
     <!-- Add logout button -->
     <form   action="#" th:action="@{/logout}" method="POST">
