@@ -19,7 +19,12 @@
         <br><br>
         Role(s): <span sec:authentication="principal.authorities"></span>
     <hr>
-
+        <!-- add a link to point to/leaders .. for managers role -->
+        <a th:href="@{/leaders}">Leadership meeting</a>
+        <br>
+        <!-- add a link to point to/systems .. for admins role -->
+        <a th:href="@{/systems}">IT Systems Meeting</a>
+    <hr>
     <!-- Add logout button -->
     <form   action="#" th:action="@{/logout}" method="POST">
         <input type="submit" value="Logout">
