@@ -996,3 +996,34 @@ if we fetch/retrieve data, whould we retrieve everything
 -eager will retrieve eveything
 -lazy will retrieve on request
 Uni-directional and Bi-directional loading
+
+
+
+
+@OneToOne mapping
+in a class which has a foreign key we make
+
+Uni-directional
+@OneToOne
+@JoinColumn(name="column which stores foreign key")
+private NameOfClassForeignKeyRefersTo somename;
+
+Entity Lifecycle
+Operation 		Description
+Detach			If entity is detached it is not associated with a Hibernate session
+Merge			If instance is detached from session, then merge will reattach to session
+Persist 		Transisitons new instances to managed state. Next flush/commit will save in db
+Remove  		Transitions managed entity to be removed. Next flush/commit will delete from db
+Refresh			Reload/synch object with data from db. Prevents stale data 
+
+Cascade types
+Persist - If entity is persisted/saved, related entityy will also be persisted
+Remove - If entity is removed, related entityy will also be removed
+Refresh -If entity is refreshed, related entityy will also be refreshed
+Detach -If entity is detached (not associated with session), related entityy will also be detached
+Merge - If entity is merged, related entityy will also be merged
+All - All of above types 
+
+@OneToOne(cascade=CascadeType.ALL) - by defgault no operations are cascade, we can do comma delimeted list like {CascadeType.PERSIST, CascadeType.REMOVE)
+@JoinColumn(name="column which stores foreign key")
+private NameOfClassForeignKeyRefersTo somename;
