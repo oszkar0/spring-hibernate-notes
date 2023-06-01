@@ -979,3 +979,20 @@ when form is loaded will call employee.get... to fill the fields (in our case it
 when is submitted calls employee.set....
 Post/Redirect/Get - pattern when we redirect to the list of employedd luv2code.com/post-redirect-get
 
+
+
+Advanced mappings
+In the database we most likely will have
+multipletables
+realtionships between tables
+	-one-to-one e.g instructor can have an instructor detail identity 
+	-one-to-many, many-to-one instrcutor can have many courses
+	-many-to-many, course can have many students, students can have many courses
+primary key - identidy a unique row in table
+foreign key - a field in one table that refers to primary key in another table
+Cascade - apply the same opeartions to related enities - cascade instructor saving to instructor detail, if we delete instructor delete also his instructor detail
+Fetch types: Eager vs lazy Loading
+if we fetch/retrieve data, whould we retrieve everything
+-eager will retrieve eveything
+-lazy will retrieve on request
+Uni-directional and Bi-directional loading
