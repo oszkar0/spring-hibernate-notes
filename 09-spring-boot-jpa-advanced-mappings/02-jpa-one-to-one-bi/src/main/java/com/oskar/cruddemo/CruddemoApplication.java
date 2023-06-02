@@ -21,7 +21,8 @@ public class CruddemoApplication {
 			//createInstructor(appDAO);
 			//findInstructorById(appDAO);
 			//deleteInstructor(appDAO);
-			findInstructorDetailById(appDAO);
+			//findInstructorDetailById(appDAO);
+			deleteInstructorDetail(appDAO);
 		};
 	}
 
@@ -53,5 +54,12 @@ public class CruddemoApplication {
 		System.out.println("Finding instructor detail with id: " + id);
 		InstructorDetail instructorDetail = appDAO.findInstructorDetailById(id);
 		System.out.println(instructorDetail);
+	}
+
+	private void deleteInstructorDetail(AppDAO appDAO){
+		int id = 2;
+		System.out.println("Deleting instructor detail with id: " + id);
+		appDAO.deleteInstructorDetailById(id);
+		System.out.println("Done");
 	}
 }
