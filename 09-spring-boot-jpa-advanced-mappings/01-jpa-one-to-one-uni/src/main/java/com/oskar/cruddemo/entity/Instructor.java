@@ -22,7 +22,7 @@ public class Instructor {
     //set up mapping
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
-    private Instructor instructorDetail;
+    private InstructorDetail instructorDetail;
 
     public Instructor() {
     }
@@ -65,11 +65,11 @@ public class Instructor {
         this.email = email;
     }
 
-    public Instructor getInstructorDetail() {
+    public InstructorDetail getInstructorDetail() {
         return instructorDetail;
     }
 
-    public void setInstructorDetail(Instructor instructorDetail) {
+    public void setInstructorDetail(InstructorDetail instructorDetail) {
         this.instructorDetail = instructorDetail;
     }
 
