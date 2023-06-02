@@ -1027,3 +1027,18 @@ All - All of above types
 @OneToOne(cascade=CascadeType.ALL) - by defgault no operations are cascade, we can do comma delimeted list like {CascadeType.PERSIST, CascadeType.REMOVE)
 @JoinColumn(name="column which stores foreign key")
 private NameOfClassForeignKeyRefersTo somename;
+
+
+
+
+
+
+
+@OneToOne Bi-directional
+	-------->
+Instuctor	Instructor Detail
+	<-------
+We can have Instructor instance which has Instructor Detail field inside, but it also works the other way
+We add a field Instructor instructor
+above we add
+@OneToOne(mappedBy="instructionDetail", cascade=CasacadeType.ALL) <--- refers to instructorDetail property in instrcutor class 
