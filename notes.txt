@@ -1042,3 +1042,25 @@ We can have Instructor instance which has Instructor Detail field inside, but it
 We add a field Instructor instructor
 above we add
 @OneToOne(mappedBy="instructionDetail", cascade=CasacadeType.ALL) <--- refers to instructorDetail property in instrcutor class 
+
+
+
+
+
+
+@OneToMany Bi-directional
+e.g
+	  <----------->Course 1
+Instructor<----------->Course 2
+	  <----------->Course 3
+  -------------Many refers to a class which is related to one objest
+@ManyToOne
+@JoinColumn(name="foreign key colum")
+
+   ----------One refers to a class which is related to many objects
+@OneToMany(mappedBy="field name in the other (many) class"
+private List<Many Class> ....;
+
+
+
+
