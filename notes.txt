@@ -1064,3 +1064,17 @@ private List<Many Class> ....;
 
 
 
+
+
+@OneToMany Fetch Types
+Eager will retreive eveything(loads all dependent entities)
+Lazy will retrieve on request (loads the mian entity first, dependent enitites are loaded on demand)
+When we define the mapping realtionship we can specify fetchtype
+@OneToMany(fetch=FetchType.LAZY, mappedBy="instructor")
+Default Fetch Types
+@OneToOne eager
+@OneToMany lazy
+@ManyToOne eager
+@ManyToMany lazy
+(We can retreive data on demand only when Hiobernate session is not close, if we do it and its closed hibernate will throw exception)
+

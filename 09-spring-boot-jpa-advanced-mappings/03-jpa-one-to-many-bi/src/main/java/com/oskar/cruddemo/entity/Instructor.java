@@ -28,6 +28,7 @@ public class Instructor {
     private InstructorDetail instructorDetail;
 
     @OneToMany(mappedBy = "instructor",
+            fetch = FetchType.EAGER,   //quick solution so we can use getCourses, but its not good
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
                        CascadeType.REFRESH}) //<-- property name in the course class
     private List<Course> courses;
