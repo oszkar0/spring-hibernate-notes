@@ -1078,3 +1078,10 @@ Default Fetch Types
 @ManyToMany lazy
 (We can retreive data on demand only when Hiobernate session is not close, if we do it and its closed hibernate will throw exception)
 
+
+
+Lazy loading
+fetch=FetchType.Lazy
+We have to create dao method to get lazy loaded entities (e.g courses of instructor)
+and if somebody wants to get our enitites we call the query and set list of main entity
+

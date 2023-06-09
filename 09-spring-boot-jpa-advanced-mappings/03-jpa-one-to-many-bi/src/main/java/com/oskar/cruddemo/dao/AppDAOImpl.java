@@ -1,11 +1,15 @@
 package com.oskar.cruddemo.dao;
 
+import com.oskar.cruddemo.entity.Course;
 import com.oskar.cruddemo.entity.Instructor;
 import com.oskar.cruddemo.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class AppDAOImpl implements AppDAO{
@@ -52,5 +56,17 @@ public class AppDAOImpl implements AppDAO{
         instructorDetail.getInstructor().setInstructorDetail(null);
 
         entityManager.remove(instructorDetail);
+    }
+
+    @Override
+    public List<Course> findCoursesByInstructorId(int id) {
+        TypedQuery<Course> coursesQuery = entityManager.createQuery(
+                "from Course where instructor.id = :id", Course.class);
+
+        coursesQuery.setParameter("id", id);
+
+
+        List<Course> courses = coursesQuery.getResultList();
+        return courses;
     }
 }
