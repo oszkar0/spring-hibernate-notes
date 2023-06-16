@@ -32,7 +32,8 @@ public class CruddemoApplication {
 			//findInstructorWithCoursesJoinFetch(appDAO);
 			//updateInstructor(appDAO);
 			//updateCourse(appDAO);
-			deleteInstructor(appDAO);
+			//deleteInstructor(appDAO);
+			deleteCourse(appDAO);
 		};
 	}
 
@@ -156,5 +157,13 @@ public class CruddemoApplication {
 		appDAO.update(tempCourse);
 
 		System.out.println("Done");
+	}
+
+	private void deleteCourse(AppDAO appDAO){
+		int id = 10;
+
+		System.out.println("Deleting the course: " + id);
+
+		appDAO.deleteCourseById(id);
 	}
 }
