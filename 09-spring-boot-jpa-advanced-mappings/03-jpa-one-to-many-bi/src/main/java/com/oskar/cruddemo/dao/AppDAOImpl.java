@@ -38,6 +38,16 @@ public class AppDAOImpl implements AppDAO{
     public void deleteInstructorById(int id) {
         Instructor instructor = entityManager.find(Instructor.class, id);
 
+        //get courses
+        List<Course> courses = instructor.getCourses();
+
+        //break associations of all courses for the instructor
+        //otherwise well get exception constraint violation since we cant delete
+        //instructor who is a foregin key for some courses
+        for(Course course: courses){
+            course.setInstructor(null);
+        }
+
         entityManager.remove(instructor); //<- will also remove instructor detail because of CascadeType.ALL
     }
 
