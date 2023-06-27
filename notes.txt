@@ -1085,3 +1085,14 @@ fetch=FetchType.Lazy
 We have to create dao method to get lazy loaded entities (e.g courses of instructor)
 and if somebody wants to get our enitites we call the query and set list of main entity
 
+
+
+@ManyToMany
+Join table is a table that provides mapping between two tables, it has foreign keys for each table to define the mapping realtionship
+@ManyToMany
+@JoinTable( <-specify which join table we will be using
+	name="course_student,
+	joinColumns=@JoinColumn(name="course_id"),
+	inveraeJoinColumns=@JoinColumn(name="student_id" -> inverse refers to the other side of the class if we are in the Course class then the inverse is Student
+)
+private List<Student> course;
