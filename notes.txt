@@ -1152,7 +1152,12 @@ runs before method call
 
 
 
-
+Pointcut Expression language
+execution(modifiers-pattern? return-type-pattern declaring-type-pattern?
+method-name-pattern(param-pattern throws-pattern?) ? - optional
+@Before("execution(public void com.oskar.aopdemo.dao.AccountDao.addAccount())") <- we might not specify class
+@Before("execution(public void add*())") <- any method that starts with add 
+* <- means any return type, any parameters etc...
 
 
 
