@@ -1096,3 +1096,59 @@ Join table is a table that provides mapping between two tables, it has foreign k
 	inveraeJoinColumns=@JoinColumn(name="student_id" -> inverse refers to the other side of the class if we are in the Course class then the inverse is Student
 )
 private List<Student> course;
+
+
+
+
+
+
+
+
+
+Aspect Oriented Programming
+Programming technique based on concept of an Aspect
+Aspect encapsulates cross-cutting logic (used everywhere - might be reused)
+
+AOP use cases
+logging, security,
+audit logging - who, what, where
+exception handling
+analytics - what are peak times etc.
+
+Aspect: module of code for a cross-cutting concern (used in many places) 
+Advice: what action is taken and when it should be aplied 
+Join point: When to apply code during program execution
+Pointcut: A predicate expression for where advice should be applied 
+
+Advice types
+Before advice: run before the method
+After finally advice: run after the method (finally)
+After returning advice: run after the method (success execution)
+After throwing advice: run after method (if exception thrown)
+
+Weaving: connecting aspects to target objects to create an advised method
+
+Two main frameworks for AOP:
+
+-Spring AOP
+Simpler than AspectJ
+Uses PROXY pattern
+Can migrate to AspectJ when using @Aspect annotation
+Used in security, transactions, caching
+Uses run-time weaving of aspects
+
+-AspectJ
+Works with any Pojo not just beans from app context
+Faster perofrmacje compared to Spring AOP
+provides compete support for AOP
+Rich support for
+join points: method-level, constructor, field
+code weaving: compile time, post compile-time and load-time
+
+
+
+
+
+
+
+
