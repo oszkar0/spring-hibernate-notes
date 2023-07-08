@@ -1168,4 +1168,8 @@ Parameter patterns
 
 
 
+Combining pointcut expressions
+we can use &&, !, ||
+like @Before("expressionOne() && ! expressionTwo()")
+
 

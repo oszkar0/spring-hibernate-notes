@@ -25,6 +25,12 @@ public class AopdemoApplication {
 		//call the bussiness method
 		theAccountDao.addAccount(new Account(), true);
 		theMembershipDao.addMemberAccount();
+
+		theAccountDao.setName("coope");
+		theAccountDao.setServiceCode("L@ACD");
+
+		String name = theAccountDao.getName();
+		String serviceCode = theAccountDao.getServiceCode();
 	}
 
 
