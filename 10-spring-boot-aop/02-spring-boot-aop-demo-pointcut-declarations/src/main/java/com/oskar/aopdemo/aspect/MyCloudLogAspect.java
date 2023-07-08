@@ -2,18 +2,15 @@ package com.oskar.aopdemo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(1)
-public class MyDemoLoggingAspect {
+@Order(3)
+public class MyCloudLogAspect {
     @Before("com.oskar.aopdemo.aspect.MySharedPointcutExpressions.forDaoPackageExcludeGettersAndSetter()")
-    public void beforeAddAccountAdvice(){
-        System.out.println("\n===>Executing @Before advice on addAccount()");
+    public void performCloudLogging(){
+        System.out.println("\n===>Logging to cloud");
     }
 }
-
-
