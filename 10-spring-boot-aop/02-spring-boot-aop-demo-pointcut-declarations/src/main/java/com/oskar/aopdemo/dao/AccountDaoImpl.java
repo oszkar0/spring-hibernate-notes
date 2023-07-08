@@ -3,6 +3,9 @@ package com.oskar.aopdemo.dao;
 import com.oskar.aopdemo.Account;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class AccountDaoImpl implements AccountDao{
     private String name;
@@ -32,5 +35,23 @@ public class AccountDaoImpl implements AccountDao{
     public void setServiceCode(String serviceCode) {
         System.out.println(getClass() + "in setServiceCode()");
         this.serviceCode = serviceCode;
+    }
+
+    @Override
+    public List<Account> findAccounts() {
+        List<Account> accounts = new ArrayList<>();
+
+        Account account1 = new Account();
+        account1.setName("Oskar");
+        account1.setLevel("80L");
+
+        Account account2 = new Account();
+        account2.setName("Oskar");
+        account2.setLevel("80L");
+
+        accounts.add(account1);
+        accounts.add(account2);
+
+        return accounts;
     }
 }
