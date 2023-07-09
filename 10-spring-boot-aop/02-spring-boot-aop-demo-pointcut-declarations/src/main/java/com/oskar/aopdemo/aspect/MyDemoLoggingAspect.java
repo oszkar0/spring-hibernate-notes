@@ -21,8 +21,14 @@ public class MyDemoLoggingAspect {
 
         long begin = System.currentTimeMillis();
 
-        Object result = proceedingJoinPoint.proceed(); // <- run the function
+        Object result = null;
+        try {
+            result = proceedingJoinPoint.proceed(); // <- run the function
+        } catch (Exception e){
+            System.out.println(e.getMessage());
 
+            result = "Major accident, but no worries, your private AOP helicopter is on the way!";
+        }
         long end = System.currentTimeMillis();
 
         System.out.println("@Around advice: duration: " + (end - begin)/1000 + " seconds");
