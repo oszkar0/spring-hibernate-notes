@@ -54,4 +54,12 @@ public class AccountDaoImpl implements AccountDao{
 
         return accounts;
     }
+
+    @Override
+    public List<Account> findAccounts(boolean tripWire) throws Exception {
+        if(tripWire){
+            throw new Exception("Test exception");
+        }
+        return null;
+    }
 }

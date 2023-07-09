@@ -2,10 +2,7 @@ package com.oskar.aopdemo.aspect;
 
 import com.oskar.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -59,6 +56,21 @@ public class MyDemoLoggingAspect {
         }
 
         System.out.println("\n===>Executing @Before advice on addAccount()\n");
+    }
+
+    @AfterThrowing( //doesnt handle the exception!!!! it is throw if not caught
+            pointcut = "execution(* findAccounts(boolean))",
+            throwing = "exception"
+    )
+    public void afterThrowingAccountsAdvice(JoinPoint joinPoint, Throwable exception){
+        //display method signature
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+
+        System.out.println("@AfterThrowing advice: Method throwing exception: " +  methodSignature + "\n");
+
+
+        //log exception
+        System.out.println("@AfterThrowing advice: Exception: " + exception.getMessage());
     }
 }
 
