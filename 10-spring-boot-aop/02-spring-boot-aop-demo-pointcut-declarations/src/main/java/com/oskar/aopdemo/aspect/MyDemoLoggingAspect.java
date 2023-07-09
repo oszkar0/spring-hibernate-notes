@@ -26,8 +26,7 @@ public class MyDemoLoggingAspect {
             result = proceedingJoinPoint.proceed(); // <- run the function
         } catch (Exception e){
             System.out.println(e.getMessage());
-
-            result = "Major accident, but no worries, your private AOP helicopter is on the way!";
+            throw e; //rethrow the exception
         }
         long end = System.currentTimeMillis();
 
