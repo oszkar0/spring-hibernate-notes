@@ -13,6 +13,13 @@ import java.util.List;
 @Component
 @Order(1)
 public class MyDemoLoggingAspect {
+    //runs for success and failure
+    @After("execution(* com.oskar.aopdemo.dao.AccountDao.findAccounts(..)) ")
+    public void afterFinallyFindAccountAdvice(JoinPoint joinPoint){
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        System.out.println("@After: " + methodSignature + "\n");
+    }
+
     @AfterReturning(
             pointcut = "execution(* com.oskar.aopdemo.dao.AccountDao.findAccounts(..))",
             returning = "results" //<- must match parameter name of below function
