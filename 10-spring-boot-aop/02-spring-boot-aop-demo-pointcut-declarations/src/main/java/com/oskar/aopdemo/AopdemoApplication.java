@@ -26,6 +26,8 @@ public class AopdemoApplication {
 
 	private void demoAfterReturningAdvice(AccountDao theAccountDao) {
 		List<Account> accounts = theAccountDao.findAccounts();
+
+		System.out.println("Main method accounts: " + accounts);
 	}
 
 	private void demoTheBeforeAdvice(AccountDao theAccountDao, MembershipDao theMembershipDao) {

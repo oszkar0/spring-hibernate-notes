@@ -25,7 +25,19 @@ public class MyDemoLoggingAspect {
         System.out.println("@AfterReturning: " + methodSignature + "\n");
 
         System.out.println(results);
+
+        //lets post process the data
+        convertAccountNamesToUpperCase(results);
+
+        System.out.println(results);
     }
+
+    private void convertAccountNamesToUpperCase(List<Account> results) {
+        for(Account a: results){
+            a.setName(a.getName().toUpperCase());
+        }
+    }
+
     @Before("com.oskar.aopdemo.aspect.MySharedPointcutExpressions.forDaoPackageExcludeGettersAndSetter()")
     public void beforeAddAccountAdvice(JoinPoint joinPoint){
         //display method signature
